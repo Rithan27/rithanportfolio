@@ -2,456 +2,401 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Rithan's Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Rithan's Portfolio</title>
 
-    <!-- Google Font for Minimalistic Style -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap" rel="stylesheet">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap" rel="stylesheet">
 
-    <style>
-        /* General Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
 
-        body {
-            background: linear-gradient(145deg, #000000, #000000); /* Dark mirror-like gradient */
-            color: #ffffff;
-            -webkit-tap-highlight-color: transparent;
-        }
+    body {
+      background: linear-gradient(145deg, #000000, #000000);
+      color: #ffffff;
+      -webkit-tap-highlight-color: transparent;
+    }
 
-        /* Glossy Glass Effect */
-        .glass {
-            backdrop-filter: blur(10px) saturate(150%);
-            -webkit-backdrop-filter: blur(10px) saturate(150%);
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-        }
+    .glass {
+      backdrop-filter: blur(10px) saturate(150%);
+      -webkit-backdrop-filter: blur(10px) saturate(150%);
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    }
 
-        /* Navbar Styles */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            padding: 20px 50px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-            background: rgba(18, 18, 18, 0); /* Semi-transparent */
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            transition: background 0.3s ease;
-            transition: top 0.3s;
-        }
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 50px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+      background: rgba(18, 18, 18, 0);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: background 0.3s ease, top 0.3s;
+    }
 
-        .logo {
-            font-size: 22px;
-            color: #00ffff;
-            font-weight: 600;
-            text-shadow: 0 0 10px rgba(0, 255, 255, 0.8); /* Glow effect */
-        }
+    .logo {
+      font-size: 22px;
+      color: #ffffff;
+      font-weight: 600;
+      opacity: 0.8;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    }
 
-        .nav-links li {
-            display: inline-block;
-            margin: 0 20px;
-        }
+    .nav-links li {
+      display: inline-block;
+      margin: 0 20px;
+    }
 
-        .nav-links a {
-            color: #f349e5ce;
-            text-decoration: none;
-            font-size: 18px;
-            transition: color 0.3s ease-in-out, transform 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
+    .nav-links a {
+      color: #ffffffcc;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s ease-in-out, transform 0.3s ease;
+      position: relative;
+    }
 
-        .nav-links a::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0);
-            top: 0;
-            left: -12%;
-            transition: all 0.4s ease;
-        }
+    .nav-links a:hover {
+      color: #ffffff;
+      transform: scale(1.1);
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    }
 
-        .nav-links a:hover::before {
-            left: 0;
-        }
+    /* Hero */
+    .hero {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      background: linear-gradient(145deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.719));
+    }
 
-        .nav-links a:hover {
-            color: #00ffff;
-            transform: scale(1.1);
-        }
+    .hero h1 {
+      font-size: 56px;
+      color: rgba(255, 255, 255, 0.85);
+      text-shadow: 0px 0px 25px rgba(255, 255, 255, 0.5);
+    }
 
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            background: linear-gradient(145deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.719));
-            text-align: center;
-        }
+    .hero p {
+      font-size: 18px;
+      color: #c0c0c0;
+    }
 
-        .hero h1 {
-            font-size: 56px;
-            color: #00ffff;
-            text-shadow: 0px 0px 25px rgba(0, 255, 255, 1); /* Intense glowing effect */
-        }
+    .scroll-button {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border: 2px solid #ffffff;
+      padding: 15px 30px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: transform 0.4s, background 0.3s ease;
+      margin-top: 30px;
+      border-radius: 25px;
+    }
 
-        .hero p {
-            font-size: 18px;
-            color: #c0c0c0;
-        }
+    .scroll-button:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.1);
+    }
 
-        .scroll-button {
-            background: rgba(0, 255, 255, 0.2);
-            color: #fff;
-            border: 2px solid #00ffff;
-            padding: 15px 30px;
-            font-size: 18px;
-            cursor: pointer;
-            transition: transform 0.4s, background 0.3s ease;
-            margin-top: 30px;
-            border-radius: 25px;
-        }
+    /* Section */
+    .section {
+      padding: 100px 50px;
+      color: #e0e0e0;
+      text-align: center;
+    }
 
-        .scroll-button:hover {
-            background: rgba(0, 255, 255, 0.5);
-            transform: scale(1.1);
-        }
+    /* About */
+    .about-section h2,
+    .education-section h2,
+    #projects h2,
+    .contact-section h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
+      color: #ffffff;
+      text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    }
 
-        /* Section Styles */
-        .section {
-            padding: 100px 50px;
-            color: #e0e0e0;
-            text-align: center;
-        }
+    .about-section p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 18px;
+      line-height: 1.6;
+      color: #ccc;
+    }
 
-        /* About Section */
-        .about-section {
-            background: linear-gradient(145deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.7));
-        }
+    /* Education */
+    .education-section ul {
+      list-style: none;
+    }
 
-        .about-section h2 {
-            font-size: 36px;
-            margin-bottom: 40px;
-            color: #00ffff;
-            text-shadow: 0px 0px 10px rgba(0, 255, 255, 0.8);
-        }
+    .education-section li {
+      margin-bottom: 20px;
+      font-size: 18px;
+      color: #ccc;
+    }
 
-        .about-section p {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 18px;
-            line-height: 1.6;
-            color: #ccc;
-        }
+    .education-section li::before {
+      content: "🎓";
+      margin-right: 10px;
+      color: #ffffff;
+    }
 
-        /* Education Section */
-        .education-section {
-            background: rgba(0, 0, 0, 0.8);
-        }
+    /* Projects */
+    .projects-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 
-        .education-section h2 {
-            font-size: 36px;
-            margin-bottom: 40px;
-            color: #00ffff;
-            text-shadow: 0px 0px 10px rgba(0, 255, 255, 0.8);
-        }
+    .project-card {
+      background: rgba(26, 26, 26, 0.486);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 20px;
+      margin: 20px;
+      width: 300px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s;
+      cursor: pointer;
+    }
 
-        .education-section ul {
-            list-style: none;
-        }
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+      background: rgba(255, 255, 255, 0.15);
+    }
 
-        .education-section li {
-            margin-bottom: 20px;
-            font-size: 18px;
-            color: #ccc;
-        }
+    .project-card h3 {
+      color: #ffffff;
+      margin-top: 10px;
+    }
 
-        .education-section li::before {
-            content: "🎓";
-            margin-right: 10px;
-            color: #00ffff;
-        }
+    .project-card p {
+      color: #ccc;
+    }
 
-        /* Project Cards */
-        .projects-container {
-            display: flex;
-            flex-wrap: wrap;
-            color: #000000
-            justify-content: center;
-        }
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
 
-        .project-card {
-            background: rgba(26, 26, 26, 0.486);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            padding: 20px;
-            margin: 20px;
-            width: 300px;
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s;
-        }
+    .btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-3px);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    }
 
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 0 20px rgba(187, 48, 152, 0.671);
-        }
+    /* Fullscreen Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 0.4s ease-in-out;
+    }
 
-        .project-card img {
-            width: 100%;
-            border-radius: 10px;
-            transition: transform 0.3s;
-        }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
 
-        .project-card img:hover {
-            transform: scale(1.05);
-        }
+      to {
+        opacity: 1;
+      }
+    }
 
-        .project-card h3 {
-            color: #00ffff;
-            margin-top: 10px;
-        }
+    .modal-content {
+      max-width: 900px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 40px;
+      color: white;
+      text-align: left;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+      animation: scaleUp 0.4s ease;
+    }
 
-        .project-card p {
-            color: #ccc;
-        }
+    @keyframes scaleUp {
+      from {
+        transform: scale(0.8);
+      }
 
-        .project-card .btn {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 20px;
-            background: rgba(0, 255, 255, 0.3);
-            color: #121212;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s, transform 0.3s;
-        }
+      to {
+        transform: scale(1);
+      }
+    }
 
-        .btn:hover {
-            background: rgba(0, 255, 255, 0.6);
-            transform: translateY(-3px);
-        }
-        
+    .close-btn {
+      color: #fff;
+      font-size: 28px;
+      position: absolute;
+      top: 25px;
+      right: 40px;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
 
-        .drive-link{
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-        }
+    .close-btn:hover {
+      color: #bbb;
+    }
 
-        .drive-link a {
-            color: #00ffff;
-            font-size: 18px;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
+    /* Contact */
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
 
-        .drive-link a:hover {
-            color: #38d1ffe8;
-        }
+    .social-links a {
+      color: #ffffff;
+      font-size: 18px;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
 
-        /* Collapsible Description */
-        .project-description {
-            display: none;
-            margin-top: 10px;
-            padding: 10px;
-            background: rgba(45, 45, 45, 0.8);
-            color: #fff;
-            border-radius: 10px;
-        }
+    .social-links a:hover {
+      color: #cccccc;
+    }
 
-        .active .project-description {
-            display: block;
-        }
-
-        /* Contact Section */
-        .contact-section {
-            background: linear-gradient(145deg, rgba(0, 0, 0, 0.9), rgb(0, 0, 0));
-            color: #ffffff;
-            padding: 100px 50px;
-            text-align: center;
-        }
-
-        .contact-section h2 {
-            font-size: 36px;
-            margin-bottom: 40px;
-            color: #00ffff;
-            text-shadow: 0px 0px 10px rgba(0, 255, 255, 0.8);
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-        }
-
-        .social-links a {
-            color: #00ffff;
-            font-size: 18px;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .social-links a:hover {
-            color: #f349e5ce;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0);
-            color: #ccc;
-            font-size: 14px;
-        }
-
-        .custom-line {
-            border: none;
-            height: 2px; /* Thickness */
-            background-color: #00ffff; /* Line color */
-            width: 80%; /* Line width relative to its container */
-            margin: 50px auto; /* Vertical margin and center alignment */
-        }
-
-    </style>
-    <script>
-        let lastScrollTop = 0; // Keep track of the last scroll position
-        const navbar = document.getElementById('navbar');
-
-        window.addEventListener('scroll', function() {
-            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-            if (currentScroll > lastScrollTop) {
-                // Scrolling down
-                navbar.style.top = '-80px'; // Adjust this value to the height of your navbar
-            } else {
-                // Scrolling up
-                navbar.style.top = '0';
-            }
-            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
-        });
-    </script>
-
-    <script>
-        function toggleDescription(event) {
-            const card = event.target.closest('.project-card');
-            card.classList.toggle('active');
-        }
-    </script>
-    
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #ccc;
+      font-size: 14px;
+    }
+  </style>
 </head>
 
 <body>
-    <!-- Navbar -->
-    <div class="navbar">
-        <div class="logo">Rithan</div>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+  <div class="navbar">
+    <div class="logo">Rithan</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+
+  <div class="hero">
+    <h1>Hey, it's me Rithan</h1>
+    <p>Graphic Designer | Front-End Developer | Photographer</p>
+    <a href="#projects" class="scroll-button">View My Work</a>
+  </div>
+
+  <div id="about" class="about-section section">
+    <h2>About Me</h2>
+    <p>
+      I’m Rithan, a passionate graphic designer, front-end developer, and photographer. I enjoy creating visually stunning designs,
+      crafting user-friendly websites, and capturing the beauty of the world through my camera lens. My goal is to deliver
+      creativity and functionality in every project I undertake.
+    </p>
+  </div>
+
+  <div id="education" class="education-section section">
+    <h2>Education</h2>
+    <ul>
+      <li>Bachelor's Degree in Artificial Intelligence and Data Science - J.J. College of Engineering (Anna University) (2022–2026)</li>
+      <li>Self-taught Graphic Designer</li>
+      <li>Self-taught Front-End Developer</li>
+    </ul>
+  </div>
+
+  <div id="projects" class="section">
+    <h2>My Projects</h2>
+    <div class="projects-container">
+      <div class="project-card" onclick="openModal('modal1')">
+        <h3>Project One</h3>
+        <p>Python project on building a model to detect eye movement</p>
+      </div>
+
+      <div class="project-card" onclick="openModal('modal2')">
+        <h3>Project Two</h3>
+        <p>Photography portfolio showcasing vibrant visuals and deep narratives.</p>
+      </div>
     </div>
+  </div>
 
-    <!-- Hero Section -->
-    <div class="hero">
-        <h1>Hey, it's me Rithan</h1>
-        <p>Graphic Designer | Front-End Developer | Photographer</p>
-        <a href="#projects" class="scroll-button">View My Work</a>
+  <!-- Modal 1 -->
+  <div id="modal1" class="modal">
+    <span class="close-btn" onclick="closeModal('modal1')">&times;</span>
+    <div class="modal-content">
+      <h2>Project One — Eye Movement Detection</h2>
+      <p>This project develops a real-time eye movement detection model using Python, leveraging computer vision techniques
+        with libraries like OpenCV and Dlib. By training a neural network to analyze eye movements, the system provides
+        insights into gaze patterns applicable to user experience and driver safety. </p>
     </div>
+  </div>
 
-    <!-- About Section -->
-    <div id="about" class="about-section section">
-        <hr class="custom-line">
-        <h2>About Me</h2>
-        <p>
-            I’m Rithan, a passionate graphic designer, front-end developer, and photographer. I enjoy creating visually stunning designs, 
-            crafting user-friendly websites, and capturing the beauty of the world through my camera lens. My goal is to deliver
-            creativity and functionality in every project I undertake.
-        </p>
-        <hr class="custom-line">
-
+  <!-- Modal 2 -->
+  <div id="modal2" class="modal">
+    <span class="close-btn" onclick="closeModal('modal2')">&times;</span>
+    <div class="modal-content">
+      <h2>Project Two — Photography Portfolio</h2>
+      <p>A personal photography portfolio highlighting some of my best works across landscapes, portraits, and urban shots.
+        Edited using Adobe Lightroom and presented as a cinematic visual story.</p>
+      <a href="https://drive.google.com/drive/folders/1F5YUYdQiRmP6uvu1sZswViTFXhBvgXdo?usp=drive_link" target="_blank"
+        style="color:#fff;text-decoration:underline;">View My Photographs</a>
     </div>
+  </div>
 
-    <!-- Education Section -->
-    <div id="education" class="education-section section">
-        <hr class="custom-line">
-        <h2>Education</h2>
-        <ul>
-            <li>Bachelor's Degree in Artificial intelligence and data sceince - J.J.college of engineering (Anna university) (2022-2026)</li>
-            <li>self-taught Graphic Designing skills</li>
-            <li>Self-taught Front-End Development Skills</li>
-        </ul>
-        <hr class="custom-line">
-
+  <div id="contact" class="contact-section section">
+    <h2>Contact Me</h2>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/rithan-kc" target="_blank">LinkedIn</a>
+      <a href="mailto:kcrithan@gmail.com">Gmail</a>
+      <a href="https://www.instagram.com/thatlunaticnerd" target="_blank">Instagram</a>
+      <a href="https://github.com/Rithan27" target="_blank">GitHub</a>
     </div>
+  </div>
 
-    <!-- Projects Section -->
-    <div id="projects" class="section">
-        <h2>My Projects</h2>
-        <div class="projects-container">
-            <!-- Project 1 -->
-            <div class="project-card">
-                <h3>Project One</h3>
-                <p>Python project on building a model to detect eye movement</p>
-                <a href="javascript:void(0)" class="btn" onclick="toggleDescription(event)">View Project</a>
-                <div class="project-description">
-                    <h4>Project Details:</h4>
-                    <p>This project develops a real-time eye movement detection model using Python, leveraging computer vision techniques with libraries like OpenCV and Dlib. By training a neural network to analyze eye movements, the system provides insights into gaze patterns, which can be applied in fields such as user experience research and driver safety. The application captures video input, processes frames, and displays results on an intuitive interface, showcasing the potential of technology in enhancing human-computer interaction.</p>
-                </div>
-            </div>
-            
+  <footer>
+    <p>&copy; 2024 Rithan. All rights reserved. | Design by Rithan</p>
+  </footer>
 
-            <!-- Project 2 -->
-            <div class="project-card">
-                <h3>Project Two</h3>
-                <p>Photography portfolio showcasing vibrant visuals and deep narratives.</p>
-                <a href="javascript:void(0)" class="btn" onclick="toggleDescription(event)">View Project</a>
-                <div class="project-description">
-                    <h4>Project Details:</h4>
-                    <p>A personal photography portfolio that highlights some of my best works across landscapes, portraits, and urban photography. This project uses Adobe Lightroom for editing and portfolio presentation.</p>
-                    <div class="drive_link">
-                    <a href="https://drive.google.com/drive/folders/1F5YUYdQiRmP6uvu1sZswViTFXhBvgXdo?usp=drive_link" target="_blank">View my Photographs</a>
-                    </div>
- 
-                </div>
-            </div>
-        </div>
-    </div>
-    <hr class="custom-line">
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = 'flex';
+    }
 
-
-
-    <!-- Contact Section -->
-    <div id="contact" class="contact-section">
-        <h2>Contact Me</h2>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/rithan-kc" target="_blank">LinkedIn</a>
-            <a href="mailto:kcrithan@gmail.com">Gmail</a>
-            <a href="https://www.instagram.com/thatlunaticnerd" target="_blank">Instagram</a>
-            <a href="https://github.com/Louisrithan" target="_blank">GitHub</a>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Rithan. All rights reserved. | Design by Rithan</p>
-    </footer>
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+  </script>
 </body>
 
 </html>
