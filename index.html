@@ -133,18 +133,17 @@
     /* Project image animation */
     .project-thumb{
       position:relative;
-      overflow:hidden;
       border-radius:12px;
+      overflow:hidden;
+      aspect-ratio:auto;
     }
     
     .project-thumb img{
       width:100%;
-      height:180px;
-      max-height:260px;
+      height:auto;
       object-fit:contain;
-      display:block;
-      transition:transform .6s var(--ease), filter .6s var(--ease);
     }
+
     
     .project-card:hover img{
       transform:scale(1.08);
@@ -449,6 +448,7 @@
   </script>
 </body>
 </html>
+
 
 
 
