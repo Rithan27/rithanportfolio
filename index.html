@@ -140,7 +140,9 @@
     .project-thumb img{
       width:100%;
       height:180px;
-      object-fit:cover;
+      max-height:260px;
+      object-fit:contain;
+      display:block;
       transition:transform .6s var(--ease), filter .6s var(--ease);
     }
     
@@ -179,6 +181,48 @@
     section{
       transition:opacity .6s ease, transform .6s ease;
     }
+    /* ===== Neutralize blue fonts & accents ONLY in Projects ===== */
+
+    /* Define project-specific accent */
+    #projects{
+      --project-fg: var(--fg);
+    }
+    
+    /* Ensure headings & text stay neutral */
+    #projects h3,
+    #projects p,
+    #projects span{
+      color: var(--project-fg);
+    }
+    
+    /* Override overlay text color */
+    #projects .project-overlay span{
+      color: var(--project-fg);
+    }
+    
+    /* Neutral glow instead of blue */
+    #projects .glow-hover:hover{
+      box-shadow:
+        0 0 0 1px color-mix(in srgb, var(--project-fg) 30%, transparent),
+        0 25px 80px color-mix(in srgb, var(--project-fg) 18%, transparent);
+    }
+    
+    /* Neutralize blue border hint */
+    #projects .project-card:hover{
+      border-color: color-mix(in srgb, var(--project-fg) 25%, transparent);
+    }
+    
+    /* Kill blue radial wash without removing effect */
+    #projects .project-card::before{
+      background:
+        radial-gradient(circle at 10% 30%,
+          color-mix(in srgb, var(--project-fg) 18%, transparent),
+          transparent 14%),
+        radial-gradient(circle at 90% 70%,
+          color-mix(in srgb, var(--project-fg) 12%, transparent),
+          transparent 22%);
+    }
+
   </style>
 </head>
 <body>
@@ -405,6 +449,7 @@
   </script>
 </body>
 </html>
+
 
 
 
